@@ -1,5 +1,25 @@
+const Decoder = require('./lib/decoder');
+const Encoder = require('./lib/encoder');
+const type = 'application/json';
+
+function decoder(options) {
+  return {
+    type,
+    create: () => new Decoder(options)
+  };
+}
+
+function encoder(options) {
+  return {
+    type,
+    create: () => new Encoder(options)
+  };
+}
+
 module.exports = {
-  type: 'application/json',
-  Decoder: require('./lib/decoder'),
-  Encoder: require('./lib/encoder')
+  type,
+  decoder,
+  encoder,
+  Decoder,
+  Encoder
 };
