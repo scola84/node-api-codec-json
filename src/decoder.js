@@ -6,17 +6,17 @@ export default class JsonDecoder extends Transform {
       objectMode: true
     });
 
-    this.data = '';
+    this._data = '';
   }
 
   _transform(data, encoding, callback) {
-    this.data += data;
+    this._data += data;
     callback();
   }
 
   _flush(callback) {
     try {
-      this.push(JSON.parse(this.data));
+      this.push(JSON.parse(this._data));
       callback();
     } catch (error) {
       callback(error);
