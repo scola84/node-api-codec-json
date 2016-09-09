@@ -16,7 +16,7 @@ export default class JsonDecoder extends Transform {
 
   _flush(callback) {
     try {
-      this.push(JSON.parse(this._data));
+      this.push(this._data ? JSON.parse(this._data) : null);
       callback();
     } catch (error) {
       callback(error);
