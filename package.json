@@ -1,6 +1,6 @@
 {
   "name": "@scola/api-codec-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON Codec",
   "repository": "github:scola84/node-api-codec-json",
   "author": "M.C. van den Boogaart <scola@kvdb.name>",
